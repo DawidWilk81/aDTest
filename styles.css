@@ -3,7 +3,11 @@
     padding:0;
     box-sizing: border-box;
 }
-
+@media (max-height:562px) {
+    #instagramBlock{
+        height: 45vw !important;
+    }
+}
 @media (max-width: 991px) {
     #searchMagnify{
         display: none;
@@ -45,10 +49,17 @@
         transition: left 500ms ease-in-out;
  
     }
+    /* }INSTAGRAM */
+    #instagramHeader h2{
+        font-size:20px !important;
+    }
+    
+
 }
 
 
 @media (min-width: 992px) {
+    
     .collapse{
         display: flex;
         justify-content: flex-end;
@@ -152,6 +163,11 @@
 #rightIntro{
     height: 100%;
     background-color: #fff;
+    padding:0;
+}
+#rightIntro img{
+    width: 100%;
+    height: 100%;
 }
 
 #introButtons{
@@ -181,4 +197,124 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Instagram block */
+
+#instagramBlock{
+    height: 40vh;
+    background-color: #F5F0EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#instagramC{
+    background-color: #1B5B31;
+    width: 80%;
+    height: 75%;
+    color: #F5F0EC;
+    
+}
+
+#instagramHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#instagramHeader h2{
+    font-size:40px;
+    font-weight: 300;
+    line-height: 120%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
+}
+
+#instagramText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#instagramText > p {
+
+    color:#F5F0EC;
+}
+#followB{
+    width: 20%;
+    min-width: 100px;
+    height: 44px;
+    border: none;
+    background-color: #F5F0EC;
+    color: #1B5B31;
+    border-radius: 100px;
+    margin-left:-3%;
+    
+    
+}
+
+/* FOOTER */
+#footer{
+    height: 40vh;
+    background-color: #111111;
+    padding-top:50px;
+    display: flex;
+    align-items: center;
+}
+#footer .container .row #logoContactB{
+    height: 40%;
+    border-bottom: 1px solid #F5F0EC;
+}
+#footer .container .row #logoContactB img{
+    height: 15%;
+
+
+}
+#logoContactB span{
+    height: 80%;
+}
+#logoContactB span b{
+    color: #F5F0EC;
+    font-weight: 400;
+    margin-top: 4%;
+}
+#contactButton{
+    background-color: #1B5B31;
+    border-radius: 100px;
+    height: 50%;
+    width: auto;
+    padding: 0 25px;
+    color: #F5F0EC;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+}
+#socials{
+    height: 30%;
+    background-color: red;
+}
+#socials ul{
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+#socials ul li {
+    float:left;
+    margin:0 15px;
+    width: 50%;
+    color:#F5F0EC;
+}
+#socials ul li:first-child {
+    margin-left:0;
+    padding-left:0;
+}
+#socials span{
+    height: 100%;
+}
+#socials span .row{
+    display: flex;
+    align-items: flex-end;
+    background-color: blue;
 }
