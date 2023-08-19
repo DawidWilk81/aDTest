@@ -1,14 +1,73 @@
+@import './keyframes.css';
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-@media (max-height:562px) {
+.row{
+    margin:0; 
+    padding:0;
+}
+/* RESPONSIVE TEXT */
+@media (max-height: 576px) {
+    #introText h2{
+        margin-top:50px !important;
+        font-size:40px !important;
+    }
+    #introText #introButtons{
+        margin-top:0;
+
+    }
+    #introText #introButtons button{
+        width: 50%;
+        
+    }
+    /* KARTY OFERT */
+    #oferta{
+        height: 200vh !important;
+    }
     #instagramBlock{
-        height: 45vw !important;
+        height: 80vh !important;
+    }
+    #footer{
+        height:110vh !important
+        ;
     }
 }
+@media (max-width: 576px) {
+    #introText >h2{
+        font-size:70px !important;
+    }
+    #introText > p{
+        font-size: 16px !important;
+    }
+    #introButtons{
+        width: 90% ;
+    }
+
+}
+@media (max-width: 768px) {
+    #introText >h2{
+        font-size:50px !important
+    }
+    #footerContactLogo{
+        text-align: center;
+        font-size:20px;
+    }
+    #contactButton{
+        padding: 15px 20px !important;
+    }
+    #introButtons{
+        width: 70% ;
+    }
+}
+/* TABLET/MOBILE MEDIA */
 @media (max-width: 991px) {
+    #intro{
+        height: 93.5vh;
+        position: relative;
+    }
     #searchMagnify{
         display: none;
     }
@@ -21,6 +80,8 @@
         top: 55px;
         left: 0;
         padding:20px;
+        z-index: 200;
+        background-color: #fff;
     }
     ul{
         height: calc(100vh - 88px);
@@ -39,30 +100,145 @@
     .navbar-toggler{
         border:none !important;
         color:#fff;
-
     }
+
     .navbar-toggler:focus{
         border: none;
         outline: none;
     }
+
     .navbar-toggler.collapsed ~ .navbar-collapse {
         transition: left 500ms ease-in-out;
- 
     }
-    /* }INSTAGRAM */
-    #instagramHeader h2{
-        font-size:20px !important;
-    }
-    
 
+    /* LEFT INTRO TEXT VALUES */
+    #leftIntro{
+        background-image: url('./assets/introPhoto.png');
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size:130% 120%;
+    }
+    #leftIntro #introText{
+        width: 90%;
+        /* text-shadow: 2px 2px 3px #ffffff8a; */
+    }
+    #leftIntro #brightOverlay{
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,1) 64%);
+    }
+    #leftIntro #introText > h2{
+        font-size:50px;
+        color:#fff;
+        width: 80%;
+    }
+    #leftIntro #introText > p{
+        font-size:14px;
+        width: 100%;
+        margin-top:3%;
+        font-weight: 200;
+        color:#fffffffa;
+    }
+
+    /* LEFT INTRO BUTTONS VALUES */
+    #leftIntro #introText #introButtons{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+    }
+
+
+    #leftIntro #introText #introButtons button:last-child{
+        margin-left:0;
+        padding: 10px 0;
+        margin-top:2%;
+        font-size:13px;
+        font-weight: 800;
+        border:2px solid #1B5B31;
+
+    }
+
+    .carousel-item.row{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #rightIntro{
+        display: none;
+    }
+    #carouselControls{
+        z-index: 60;
+    }
+
+#introButtons button:last-child{
+    display: flex;
+    border-radius: 100px;
+    background-color: transparent;
+    border: 1px solid #1B5B31;
+    color:#1B5B31;
+    width: auto;
+    white-space: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-left:5%;
+}
+/* OFERTA */
+#oferta{
+    height: 140vh;
+}
+.card{
+    height: 50% !important;
+    
+}
+.cardLink{
+    font-size: 14px !important;
+}
+.card-text{
+    height: 40%;
+}
+.cardText b{
+    font-size: 18px !important;
+}
+.cardText p{
+    font-size: 9px !important;
+    font-weight: 500;
+}
+.cardInside img{
+    width: 22px;
+    height: 22px;
 }
 
+#socials{
+    width: 100%;
+}
+#socials span{
+    font-size:9px !important;
+}
+#socials ul li {
+    font-size: 10px !important;
+}
+#instagramHeader h2{
+    font-size:30px !important;
+}
+#followB{
+    margin-left: -5%;
+}
+}
 
+/* DESKTOP MEDIA */
 @media (min-width: 992px) {
-    
     .collapse{
         display: flex;
         justify-content: flex-end;
+    }
+    #contactButton{
+        padding: 5px 20px !important;
+    }
+    #footerContactLogo{
+        font-size:20px;
+    }
+    #footerContactButton{
+        font-weight: 300;
     }
 }
 
@@ -127,17 +303,52 @@
     top: 2px;
 }
 
-/* INTRO */
+/* INTRO(HERO PAGE) */
 #intro{
     height: 94.1vh;
+    position: relative;
+}
+#introCarousel{
+    width: 100%;
+    height: 100% !important;
+}
+.carousel-inner{
+    height: 100%;
+}
+.carousel-item{
+    height: 100%;
+}
+
+/* LEFT SIDE OF INTRO(HERO PAGE) */
+#carouselControls{
+    background-color: #F5F0EC;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    right:0;
+    bottom:0;
+    
+}
+
+#carouselControls a{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#carouselControls a i{
+    font-size:30px;
+    color:#000;
 
 }
+
 #leftIntro{
-    height: 100%;
     background-color: #DCC1AB;
     display: flex;
     justify-content: center;
-    
+    position: relative;
+
 }
 
 #introText{
@@ -145,68 +356,236 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      animation: showIntroText 0.8s linear;
+      z-index: 40;
 }
 #introText h2{
-    margin-top:30%;
-    font-size:60px;
+    margin-top:20%;
+    font-size:70px;
     width: 80%;
-    line-height: 60px;
+    line-height: 110%;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 #introText p{
     font-family: 'Inter', sans-serif;
-    width: 68%;
-    margin-top:50px;
+    width: 70%;
+    margin-top:40px;
     font-size:16px;
     line-height: 150%;
 }
-#rightIntro{
+/* IMAGE OVERLAY */
+#leftIntro span{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: #ffffff10;
+    z-index: 20;
     height: 100%;
-    background-color: #fff;
-    padding:0;
 }
-#rightIntro img{
-    width: 100%;
-    height: 100%;
-}
-
 #introButtons{
-    width: 70%;
-    height: 45px;
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     font-family: 'Inter', sans-serif;
     font-size:16px;
-    margin-top:10%;
+    margin-top:5%;
+
 }
 #introButtons button:first-child{
     border-radius: 100px;
     background-color: #1B5B31;
     color:#F5F0EC;
     border:none;
-    width: 200px;
     font-weight: 300;
+    white-space: nowrap;
+    text-align: left;
+    padding:10px 30px !important;
 }
+
+#introButtons button:first-child:hover{
+    background-color: #1ba04a;
+    position: relative;
+    top:2px;
+   
+}
+
 #introButtons button:last-child{
     border-radius: 100px;
     background-color: transparent;
     border: 1px solid #1B5B31;
     color:#1B5B31;
-    width: 250px;
+    width: auto;
     white-space: nowrap;
+
+    margin-left:5%;
+    padding-left:52px;
+    padding-right:5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    padding:10px 20px !important;
+}
+#introButtons button:last-child:hover{
+    color:#fff;
+    border:1px solid #ffffffc2;
+}
+/* RIGHT SIDE OF INTRO(HERO PAGE) */
+#rightIntro{
+    background-color: #fff;
+    position: relative;
+}
+#rightIntro img{
+    width: 100%;
+    height: 100%;
+    animation: showIntroImg 0.8s linear;
+}
+#rightIntro span{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: #ffffff10;
 }
 
-/* Instagram block */
 
+/* OFERTA  */
+#oferta{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F0EC;
+}
+
+#ofertaText{
+    height: 50%;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin-left:10%;
+}
+.row #titleBlock{
+    height: 10%;
+    color:#1B5B31;
+    font-size:16px;
+}
+.row #titleBig{
+    height: 20%;
+}
+.row #titleBig h2{
+    font-size:48px;
+}
+.row #titleSmall{
+    height: 30%;
+}
+.row #titleSmall p{
+    width: 67%;
+}
+#ofertaTables{
+    height: 50%;
+}
+.card{
+    width: 100%;
+    height: 80%;
+    padding:0 50px;
+    background-color: transparent;
+    border:none;
+}
+.cardInside{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+}
+.cardInside img{
+    width: 44px;
+    height: 44px;
+}
+.cardInside b{
+    font-size: 28px;
+}
+
+.cardLink{
+    color:#1B5B31;
+    font-size:16px;
+    line-height: 160%;
+    font-weight: 600;
+    border-bottom:1px solid #1B5B31;
+    white-space: nowrap;
+    /* margin-top:3%; */
+}
+/* ABOUT */
+#about{
+    height:80vh;
+    background-color: #1B5B31;
+}
+#about img{
+    width: 100%;
+    height: 100%;
+}
+#aboutText{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#aboutTextRectangle{
+    width: 80%;
+    height: 100%;
+    color: #F5F0EC;
+    font-family: 'Inter' sans-serif;
+}
+#aboutTextRectangle .row {
+    display: flex;
+    flex-direction: column;
+}
+#aboutTextRectangle .row > h2 {
+    font-size:48px;
+    letter-spacing: -3px;
+    line-height: 115%;
+}
+#aboutTextRectangle .row > p{
+    font-size:16px;
+    letter-spacing: -1px;
+    line-height: 150%;
+}
+#aboutTextRectangle .row > button{
+    border:1px solid #F5F0EC;
+    width: 200px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    font-size:16px;
+    margin-top:5%;
+
+}
+#aboutTextRectangle .row > button:hover{
+    border:1px solid #ffffff;
+    color:#fff;
+    position: relative;
+    top:2px;
+}
+
+/* INSTAGRAM */
 #instagramBlock{
     height: 40vh;
     background-color: #F5F0EC;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #instagramC{
@@ -237,6 +616,7 @@
     justify-content: center;
     align-items: center;
 }
+
 #instagramText > p {
 
     color:#F5F0EC;
@@ -249,62 +629,75 @@
     background-color: #F5F0EC;
     color: #1B5B31;
     border-radius: 100px;
-    margin-left:-3%;
+  
     
     
 }
 
 /* FOOTER */
 #footer{
-    height: 40vh;
+    height: 50vh;
     background-color: #111111;
     padding-top:50px;
     display: flex;
+    color:#F5F0EC;
     align-items: center;
 }
 #footer .container .row #logoContactB{
-    height: 40%;
+    height: 30%;
     border-bottom: 1px solid #F5F0EC;
+}
+#logoContactB .row{
+    width: 100%;
 }
 #footer .container .row #logoContactB img{
     height: 15%;
-
-
+}
+.logo{
+    margin-top:3%;
 }
 #logoContactB span{
     height: 80%;
+
 }
 #logoContactB span b{
     color: #F5F0EC;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 4%;
+
 }
 #contactButton{
     background-color: #1B5B31;
     border-radius: 100px;
-    height: 50%;
+    height: 40%;
     width: auto;
-    padding: 0 25px;
     color: #F5F0EC;
+
     display: flex;
     align-items: center;
     font-weight: 300;
+    white-space: nowrap;
 }
 #socials{
-    height: 30%;
-    background-color: red;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
 }
 #socials ul{
     list-style-type: none;
     height: 100%;
     display: flex;
     align-items: flex-end;
+    width: 30%;
 }
 #socials ul li {
     float:left;
-    margin:0 15px;
-    width: 50%;
+    margin:0 20px;
+    width: 25%;
     color:#F5F0EC;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
 }
 #socials ul li:first-child {
     margin-left:0;
@@ -312,9 +705,29 @@
 }
 #socials span{
     height: 100%;
+    width: 40%;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
 }
 #socials span .row{
     display: flex;
     align-items: flex-end;
-    background-color: blue;
+    justify-content: flex-end;
+    color:#F5F0EC;
+}
+
+#footerBottom{
+    height: 10%;
+    color:#F5F0EC;
+    margin-top:8%;
+ 
+}
+#footerLogo{
+    width: 40%;
+    height: 100%;
+}
+#footerLogo img{
+    height: 23px;
+    width: 113px;
 }
