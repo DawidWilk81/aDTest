@@ -12,7 +12,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
-    </head>
+        
+      </head>
     <body>
       <!-- NAVIGATION -->
       <div id="backgroundLock"></div>
@@ -70,7 +71,7 @@
                     <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
                     <div id="introButtons">
                       <button class="btn btn-success">Skontaktuj się z nami</button>
-                      <button class="btn px-2">Zobacz nasze realizacje<i class="fa-solid fa-arrow-down ml-3"></i></button>
+                      <button class="btn ">Zobacz nasze realizacje<i class="fa-solid fa-arrow-down ml-3"></i></button>
                     </div>
                   </div>
                 </div>
@@ -114,7 +115,7 @@
 
         <div class="row" id="ofertaTables">
 
-            <div class="col-6 col-lg-4  px-0 px-lg-4 card">
+            <div class="col-6 col-lg-4  px-0 pl-lg-5 pr-0 card">
               <div class="col-12 cardInside py-3 pt-4 pl-4">
                 <img src="./assets/penIcon.png" alt="pen icon">
                 <span class="cardText ">
@@ -127,7 +128,7 @@
               </div>
             </div>
 
-            <div class="col-6 col-lg-4 px-3 px-lg-4 card ">
+            <div class="col-6 col-lg-4 px-3 pl-lg-5 pr-0 card ">
               <div class="col-12 cardInside p-4 pt-4">
                 <img src="./assets/eyeIcon.png" alt="offer eye icon">
                 <span class="cardText">
@@ -139,7 +140,7 @@
               </div>
             </div>
 
-            <div class="col-7 col-lg-4 mx-auto px-0  mx-lg-0 mt-2 mt-lg-0 px-lg-4 card ">
+            <div class="col-7 col-lg-4 mx-auto px-0  mx-lg-0 mt-2 mt-lg-0 pl-lg-5 card pr-0 ">
               <div class="col-12  cardInside pb-1 pb-lg-4 pt-3 pt-lg-4  d-flex justify-content-start align-items-start flex-column flex-lg-row">
                 <img src="./assets/sparksIcon.png" alt="sparks icon">
                 <span class="cardText ">
@@ -156,25 +157,49 @@
         <!-- ABOUT -->
         <div id="about">
           <div class="row m-0 p-0 h-100">
-            <div class="col-5 h-100 p-0">
+            <div class="col-6 h-100 p-0">
               <img src="./assets/aboutPhoto.png" alt="aboutPhoto">
             </div>
-            <div class="col-7" id="aboutText">
-              <div class="container" id="aboutTextRectangle">
+            <div class="col-6" id="aboutText">
+              <div class="container py-0" id="aboutTextRectangle">
                 <div class="row h-100 m-0 p-0 d-flex align-items-start">
                   <p>O firmie</p>
                   <h2>Tworzymy <br>z pasją</h2>
-                  <p class="mt-4 aboutParag">
+                  <p class=" mt-lg-4" id="aboutParag">
                     Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.
                   </p>
                   <button class="btn btn-success">
-                    Poznaj nas bliżej<i class="fa-solid fa-arrow-right-long mt-1"></i>
+                    Poznaj nas bliżej<i class="fa-solid fa-arrow-right-long ml-2"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- MASONRY BLOCKS -->
+        <div id="projekty">
+          <p class="pt-5">Realizacje</p>
+          <h2>Nasze projekty</h2>
+          <div class="grid mt-5">
+          
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto1.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto2.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto3.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto4.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto5.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto6.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto7.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto8.png" alt="MasonryGridImage"></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto9.png" alt="MasonryGridImage"></div>
+            <!-- <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto10.png" alt=""></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto11.png" alt=""></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto12.png" alt=""></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto13.png" alt=""></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto14.png" alt=""></div>
+            <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto15.png" alt=""></div> -->
+          </div>     
+        </div>
+
         <!-- INSTAGRAM BLOCK -->
         <div id="instagramBlock">
         <div class="h-75" id="instagramC">
@@ -215,14 +240,14 @@
                 
               </ul>
               <span>
-                <div class="row h-100 m-0 p-0">
+                <div class="row h-100 m-0 p-0 ">
                   <div class="col-12 col-md-5 text-right">000-000-000</div>
                   <div class="col-12 col-md-5 text-right">giarddesign@kontakt.pl</div>
                 </div>
               </span>
             </div>
             <div class="col-12 px-0" id="footerBottom">
-              <div class="row m-0 p-0 h-100 d-flex justify-content-center justify-content-sm-between align-items-center text-left ">
+              <div class="row m-0 p-0 h-100 d-flex justify-content-between px-3 px-lg-0 align-items-center text-left ">
                 Prawa zastrzeżone &#169 2022
               <span>
                 madeBy <img src="./assets/logo-full-light.png" alt="footerLogo" class="mx-2">
@@ -234,9 +259,11 @@
         </div>
 
 <!-- IMPORT SCRIPTS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>        
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
         <script src="main.js" async defer></script>
     </body>
 </html>

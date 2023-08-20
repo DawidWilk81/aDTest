@@ -4,12 +4,30 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 .row{
     margin:0; 
     padding:0;
 }
 /* RESPONSIVE TEXT */
+@media screen and (min-width: 0) {
+    .grid-item {
+        width: calc(100% - 20px); /* Dwie kolumny na małych ekranach */
+      }
+}
+@media screen and (min-width: 577px) {
+    .grid-item {
+      width: calc(50% - 20px); 
+    }
+}
+
+/* Dla ekranów o szerokości większej niż 768px */
+@media screen and (min-width: 769px) {
+    .grid-item {
+        width: calc(33% - 20px);
+    }
+}
 @media (max-height: 576px) {
     #introText h2{
         margin-top:50px !important;
@@ -27,6 +45,7 @@
     #oferta{
         height: 200vh !important;
     }
+
     #instagramBlock{
         height: 80vh !important;
     }
@@ -34,7 +53,9 @@
         height:110vh !important
         ;
     }
+    
 }
+
 @media (max-width: 576px) {
     #introText >h2{
         font-size:70px !important;
@@ -45,7 +66,13 @@
     #introButtons{
         width: 90% ;
     }
-
+    #about{
+        height: 100vh !important;
+    }
+    #aboutTextRectangle .row #aboutParag{
+        width: 100%;
+        font-size:12px !important;
+    }
 }
 @media (max-width: 768px) {
     #introText >h2{
@@ -61,6 +88,7 @@
     #introButtons{
         width: 70% ;
     }
+    
 }
 /* TABLET/MOBILE MEDIA */
 @media (max-width: 991px) {
@@ -71,6 +99,7 @@
     #searchMagnify{
         display: none;
     }
+    
     .navbar-collapse {
         width: 70%;
         height: 100%;
@@ -143,10 +172,9 @@
     #leftIntro #introText #introButtons{
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
 
     }
-
 
     #leftIntro #introText #introButtons button:last-child{
         margin-left:0;
@@ -169,7 +197,9 @@
     #carouselControls{
         z-index: 60;
     }
-
+#introButtons button:first-child{
+    padding-left: 10px !important;
+}
 #introButtons button:last-child{
     display: flex;
     border-radius: 100px;
@@ -185,13 +215,29 @@
 /* OFERTA */
 #oferta{
     height: 140vh;
+    padding-bottom: 50px;
+}
+#contactButton{
+    padding: 5px 20px !important;
+    height: 20% !important;
 }
 .card{
     height: 50% !important;
-    
+
+}
+.cardInside{
+    width: 100% !important;
 }
 .cardLink{
-    font-size: 14px !important;
+    font-size: 9px !important;
+
+}
+
+#titleSmall p{
+    width: 90% !important  ;
+}
+#titleBig h2{
+    font-size:40px !important;
 }
 .card-text{
     height: 40%;
@@ -203,19 +249,38 @@
     font-size: 9px !important;
     font-weight: 500;
 }
+#about{
+    height: 70vh !important;
+}
 .cardInside img{
     width: 22px;
     height: 22px;
 }
-
+#aboutTextRectangle .row h2{
+    font-size:30px !important;
+}
+#aboutTextRectangle .row p{
+    width: 100%;
+    margin-top:5%;
+    font-size:13px !important;
+}
+#aboutTextRectangle .row button{
+    width: 100% !important;
+    font-size:10px !important;
+    white-space: nowrap; 
+}
 #socials{
     width: 100%;
 }
 #socials span{
     font-size:9px !important;
 }
+#socials ul {
+    margin-left:3%;
+}
 #socials ul li {
     font-size: 10px !important;
+    
 }
 #instagramHeader h2{
     font-size:30px !important;
@@ -223,6 +288,18 @@
 #followB{
     margin-left: -5%;
 }
+#footerBottom .row{
+    font-size:11px;
+    justify-content: space-between;
+}
+#footerContactButton b{
+    font-size:10px;
+}
+#footerContactButton button{
+    padding:15px 10px !important; 
+    margin-top:5% !important; 
+}
+
 }
 
 /* DESKTOP MEDIA */
@@ -231,9 +308,7 @@
         display: flex;
         justify-content: flex-end;
     }
-    #contactButton{
-        padding: 5px 20px !important;
-    }
+
     #footerContactLogo{
         font-size:20px;
     }
@@ -403,7 +478,8 @@
     font-weight: 300;
     white-space: nowrap;
     text-align: left;
-    padding:10px 30px !important;
+    padding:11px 10px;
+     
 }
 
 #introButtons button:first-child:hover{
@@ -497,7 +573,7 @@
     border:none;
 }
 .cardInside{
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: #fff;
     border-radius: 28px;
@@ -523,9 +599,13 @@
     white-space: nowrap;
     /* margin-top:3%; */
 }
+.cardLink:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
 /* ABOUT */
 #about{
-    height:80vh;
+    height:60vh;
     background-color: #1B5B31;
 }
 #about img{
@@ -539,15 +619,22 @@
     align-items: center;
 
 }
+#aboutTextRectangle .row p{
+    width: 88%;
+    font-size:13px;
+}
 #aboutTextRectangle{
     width: 80%;
     height: 100%;
     color: #F5F0EC;
-    font-family: 'Inter' sans-serif;
+    padding:50px 0;
+    margin-top:10%;
 }
+
 #aboutTextRectangle .row {
     display: flex;
     flex-direction: column;
+
 }
 #aboutTextRectangle .row > h2 {
     font-size:48px;
@@ -555,20 +642,22 @@
     line-height: 115%;
 }
 #aboutTextRectangle .row > p{
-    font-size:16px;
     letter-spacing: -1px;
     line-height: 150%;
+    font-weight: 300;
+    font-size:16px;
 }
 #aboutTextRectangle .row > button{
     border:1px solid #F5F0EC;
     width: 200px;
     border-radius: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: transparent;
     font-size:16px;
     margin-top:5%;
+    padding:12px 0px;
 
 }
 #aboutTextRectangle .row > button:hover{
@@ -577,10 +666,34 @@
     position: relative;
     top:2px;
 }
-
+/* MASONRY */
+#projekty{
+    background-color: #DCC1AB;
+    height: auto;
+}
+#projekty p{
+    font-size: 12px;
+    color: #1B5B31;
+    margin-left:20%;
+}
+#projekty h2{
+    font-size:48px;
+    margin-left:20%;
+}
+.grid{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.grid-item{
+    width: calc(33% -20px);
+    margin-bottom: 30px;
+}
+.grid-item img{
+    width: 100%;
+}
 /* INSTAGRAM */
 #instagramBlock{
-    height: 40vh;
+    height: 50vh;
     background-color: #F5F0EC;
     display: flex;
     justify-content: center;
@@ -629,9 +742,13 @@
     background-color: #F5F0EC;
     color: #1B5B31;
     border-radius: 100px;
-  
-    
-    
+}
+#followB:hover{
+    background-color: transparent;
+    position: relative;
+    top:2px;
+    border:1px solid #F5F0EC;
+    color: #F5F0EC;
 }
 
 /* FOOTER */
@@ -678,6 +795,12 @@
     font-weight: 300;
     white-space: nowrap;
 }
+#contactButton:hover{
+    background-color: #1ba04a;
+    position: relative;
+    top:2px;
+       
+ }
 #socials{
     height: 20%;
     display: flex;
@@ -689,6 +812,7 @@
     display: flex;
     align-items: flex-end;
     width: 30%;
+
 }
 #socials ul li {
     float:left;
@@ -698,6 +822,12 @@
     font-size: 14px;
     font-weight: 300;
     font-family: 'Inter', sans-serif;
+}
+#socials ul li:hover{
+    color:#fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    cursor: pointer;
 }
 #socials ul li:first-child {
     margin-left:0;
@@ -723,6 +853,7 @@
     margin-top:8%;
  
 }
+
 #footerLogo{
     width: 40%;
     height: 100%;
