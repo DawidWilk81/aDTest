@@ -18,26 +18,38 @@ window.onload = ()=>{
     var msnry = new Masonry( grid, {
     itemSelector: '.grid-item',
     columnWidth: '.grid-item',
-    percentPosition: true,
+    // percentPosition: true,
     gutter:30,
     
     });
+
     overlayBtn.addEventListener('click', () => {
+        var elems = []; // Lista nowych elementów
+        var fragment = document.createDocumentFragment();
+    
+        // Tworzenie i dodawanie nowych elementów do fragmentu
         imgTable.forEach((element) => {
             var newGridItem = document.createElement('div');
             newGridItem.className = 'grid-item';
             newGridItem.innerHTML = `<img src="${element}" alt='MasonryGridImage'>`;
     
-            // Dodawanie elementu do siatki i informowanie Masonry
-            grid.appendChild(newGridItem);
-            msnry.appended(newGridItem);
+            fragment.appendChild(newGridItem);
+            elems.push(newGridItem);
         });
     
-        // Po dodaniu wszystkich elementów, wywołaj layout Masonry
-        msnry.layout();
+        // Dodawanie fragmentu do kontenera .grid
+        grid.appendChild(fragment);
     
-        //overlay toggle
-        gridOverlay.style.background = 'transparent';
+        // Wywołanie funkcji Masonry do obsługi nowych elementów poza pętlą
+        msnry.appended(elems);
+    
+        // Po dodaniu wszystkich elementów, wywołaj layout Masonry
+        setTimeout(() => {
+            msnry.layout();
+        }, 0);
+    
+        // Ukryj przycisk overlay
+        gridOverlay.style.opacity = 0;
     });
 
     //Functions

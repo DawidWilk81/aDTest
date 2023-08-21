@@ -685,8 +685,11 @@
 .grid{
     box-sizing: border-box;
     position: relative;
+    height:auto;
+
 }
 .grid-item {
+
     width: calc(100%/3 - 20px);
     margin-bottom:20px; 
 
