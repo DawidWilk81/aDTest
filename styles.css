@@ -11,23 +11,21 @@
     padding:0;
 }
 /* RESPONSIVE TEXT */
-@media screen and (min-width: 0) {
+@media screen and (max-width: 576px) {
     .grid-item {
-        width: calc(100% - 20px); /* Dwie kolumny na małych ekranach */
-      }
-}
-@media screen and (min-width: 577px) {
-    .grid-item {
-      width: calc(50% - 20px); 
-    }
+        width: calc(100% - 20px); 
+    }      
 }
 
-/* Dla ekranów o szerokości większej niż 768px */
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 976px) {
     .grid-item {
-        width: calc(33% - 20px);
+      width: calc(100%/2 - 20px); 
+
     }
 }
+ 
+
+
 @media (max-height: 576px) {
     #introText h2{
         margin-top:50px !important;
@@ -115,7 +113,9 @@
     ul{
         height: calc(100vh - 88px);
     }
-
+    #navbarContent{
+        z-index: 20;
+    }
     .navbar-collapse.collapsing {
         left: -75%;
         transition: height 0s ease;
@@ -315,11 +315,13 @@
     #footerContactButton{
         font-weight: 300;
     }
+    
 }
 
 .navbar{
     background-color: #ffff;
-
+    z-index: 4000;
+    
 }
 .navbar-nav{
     height: 100%;
@@ -682,14 +684,55 @@
 }
 .grid{
     box-sizing: border-box;
-    margin: 0 auto;
+    position: relative;
 }
-.grid-item{
-    width: calc(33% -20px);
-    margin-bottom: 30px;
+.grid-item {
+    width: calc(100%/3 - 20px);
+    margin-bottom:20px; 
+
+}      
+#gridOverlay{
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index: 200;
+    background: rgb(214,183,158);
+    background: linear-gradient(180deg, rgba(214,183,158,0) 0%, rgba(220,193,171,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    transition: 0.3s;
+    pointer-events: none;
+}
+#overlayBtn{
+    width: 124px;
+    height: 54px;
+    border:1px solid #111111;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    border-radius: 50px;
+    margin-bottom:5%;
+    pointer-events: all;
+    
+}
+#overlayBtn:hover{
+  border:2px solid #fff;
+  color:#fff;
+  position: relative;
+  top:2px;
+
 }
 .grid-item img{
     width: 100%;
+}
+.grid-item img:hover{
+    position: relative;
+    top:2px;
+    cursor: pointer;
+    mix-blend-mode: multiply;
 }
 /* INSTAGRAM */
 #instagramBlock{
