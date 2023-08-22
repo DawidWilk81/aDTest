@@ -12,11 +12,33 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
-        
       </head>
     <body>
       <!-- NAVIGATION -->
       <div id="backgroundLock"></div>
+      <!-- image viewer -->
+      <div id="imageGallery">
+        <button class="btn" id="prev">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="container m-0 p-0 h-100">
+          <div id="exit">
+            <button class="btn btn-danger">
+              <i class="fa-regular fa-circle-xmark"></i>
+            </button>
+          </div>
+          <div id="galleryImg">
+            <img src="./assets/aboutPhoto.png" alt="imageGalleryPhoto">
+          </div>
+         
+        </div>
+        
+        <div id="next">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+      </div>
       <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 sticky-top">
           <a class="navbar-brand ml-lg-5 ml-1" href="#"><span style="font-weight: 700;">giard</span>design</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +46,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav d-flex">
+              <li class="nav-item text-center" id="logoNavbarSm">
+                <span style="font-weight: 700; margin:0">giard</span>design
+              </li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Oferta
@@ -62,28 +87,49 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="row m-0 p-0 h-100">
-                <div id="leftIntro" class="col-12 col-lg-7">
+                <div id="leftIntro" class="col-12 col-lg-7 leftIntroF">
                   <span id="brightOverlay"></span>
                   <div id="introText">
                     <h2>
-                      Nowoczesna aranżacja Twojego ogrodu 
+                      Nowoczesna<br> aranżacja <br>Twojego ogrodu 
                     </h2>
-                    <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+                    <p class="mt-5 w-75">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
                     <div id="introButtons">
-                      <button class="btn btn-success">Skontaktuj się z nami</button>
-                      <button class="btn ">Zobacz nasze realizacje<i class="fa-solid fa-arrow-down ml-3"></i></button>
+                      <button class="btn btn-success px-4 px-md-2">Skontaktuj się z nami</button>
+                      <a href="#projekty"><button class="btn">Zobacz nasze realizacje<i class="fa-solid fa-arrow-down ml-3"></i></button></a>
                     </div>
                   </div>
                 </div>
                 <div class="p-0 col-5" id="rightIntro">
-                  <span id="brightOverlay"></span>
+
                   <img src="./assets/introPhoto.png" alt="introPhoto">
                 </div>
               </div>
             </div>
-            <!-- <div class="carousel-item">
-              <img class="d-block w-100" src="..." alt="Second slide">
-            </div> -->
+            <div class="carousel-item ">
+              <div class="row m-0 p-0 h-100">
+                <div id="leftIntro" class="col-12 col-lg-7 leftIntroS">
+                  <span id="brightOverlay"></span>
+                  <div id="introText">
+                    <h2>
+                      Tworzymy Ogród Twoich Marzeń
+                    </h2>
+                    <p class="mt-5 w-75">Nasza firma kładzie nacisk na tworzenie wyjątkowych przestrzeni, które odzwierciedlają Twoją wizję idealnego ogrodu.</p>
+                    <div id="introButtons">
+                      <button class="btn btn-success px-4 px-md-2">Skontaktuj się z nami</button>
+                      <a href="#projekty">
+                        <button class="btn p-0 ">
+                          Zobacz nasze realizacje<i class="fa-solid fa-arrow-down ml-3"></i>
+                        </button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-0 col-5" id="rightIntro">
+                  <span id="secondBrightOverlay"></span>
+                  <img src="./assets/gavin-mcgruddy-unsplash.jpg" alt="introPhoto">
+                </div>
+              </div>
+            </div>
           </div>
           <div id="carouselControls">
             <a class="carousel-control-prev carouselControl" href="#introCarousel" role="button" data-slide="prev">
@@ -115,8 +161,8 @@
 
         <div class="row" id="ofertaTables">
 
-            <div class="col-6 col-lg-4  px-0 pl-lg-5 pr-0 card">
-              <div class="col-12 cardInside py-3 pt-4 pl-4">
+            <div class="col-6 col-lg-4 card px-2 px-md-5">
+              <div class="col-12 cardInside px-4 px-md-5"  id="cardFirst">
                 <img src="./assets/penIcon.png" alt="pen icon">
                 <span class="cardText ">
                   <b>Projekty</b>
@@ -128,8 +174,8 @@
               </div>
             </div>
 
-            <div class="col-6 col-lg-4 px-3 pl-lg-5 pr-0 card ">
-              <div class="col-12 cardInside p-4 pt-4">
+            <div class="col-6 col-lg-4 card  px-2 px-md-5">
+              <div class="col-12 cardInside px-4 px-md-5" id="cardSecond">
                 <img src="./assets/eyeIcon.png" alt="offer eye icon">
                 <span class="cardText">
                   <b>Wizualizacje</b>
@@ -140,12 +186,12 @@
               </div>
             </div>
 
-            <div class="col-7 col-lg-4 mx-auto px-0  mx-lg-0 mt-2 mt-lg-0 pl-lg-5 card pr-0 ">
-              <div class="col-12  cardInside pb-1 pb-lg-4 pt-3 pt-lg-4  d-flex justify-content-start align-items-start flex-column flex-lg-row">
+            <div class="col-7 col-lg-4 mx-auto px-0  mx-lg-0 mt-2 mt-lg-0 card px-md-5"  >
+              <div id="cardThird" class="col-12  cardInside pb-1 pb-lg-4 pt-3 pt-lg-4 px-4  d-flex justify-content-start align-items-start flex-column flex-lg-row">
                 <img src="./assets/sparksIcon.png" alt="sparks icon">
                 <span class="cardText ">
-                  <b >Realizacje</b>
-                  <p class="mt-lg-2 mt-2">Zrealizujemy Twoje marzenie przy użyciu najnowszych
+                  <b>Realizacje</b>
+                  <p class="mt-lg-3 mt-2">Zrealizujemy Twoje marzenie przy użyciu najnowszych
                       rozwiązań i zaawansowanych technologii.</p>
                 </span>
                 <a href="#" class="cardLink ">Zobacz nasze realizacje <i class="fa-solid fa-arrow-right-long"></i></a>
@@ -177,13 +223,18 @@
           </div>
         </div>
         <!-- MASONRY BLOCKS -->
-        <div id="projekty">
+        <div id="projekty" #projekty name="projekty">
           <p class="pt-5">Realizacje</p>
-          <h2>Nasze projekty</h2>
+          <h2 >Nasze projekty</h2>
           <div class="grid">
             <div id="gridOverlay">
               <button class="btn" id="overlayBtn" name="overlayBtn">
                 Rozwiń <i class="fa-solid fa-arrow-down ml-3"></i>
+              </button>
+            </div>
+            <div id="gridOverlayHide">
+              <button class="btn" id="overlayHideBtn" name="overlayHideBtn">
+                Schowaj <i class="fa-solid fa-arrow-up ml-3"></i>
               </button>
             </div>
             <div class="grid-item"><img src="./assets/masonryImages/masonryPhoto1.png" alt="MasonryGridImage"></div>
@@ -203,11 +254,11 @@
         <div id="instagramBlock">
         <div class="h-75" id="instagramC">
             <div class="row h-100">
-              <div class="col-12 col-lg-7 text-center text-lg-left  " id="instagramHeader">
+              <div class="col-12 col-lg-8 text-center text-lg-left  " id="instagramHeader">
                 <h2>Zostańmy w kontakcie!<br> Znajdziesz nas na <span style="font-weight:500;">Instagramie.</span></h2>
               </div>
-              <div class="col-12 col-lg-5 p-0 d-flex flex-column" id="instagramText">
-                <p class="ml-4 ml-sm-3 ml-lg-4 d-flex flex-column">
+              <div class="col-12 col-lg-4 p-0 pl-3 d-flex flex-column" id="instagramText">
+                <p class="d-flex flex-column">
                 <span>śledź nasze</span> najnowsze realizacje!</p>
                 <button class="btn" id="followB">Instagram</button>
               </div>
@@ -217,52 +268,53 @@
 
         <!-- FOOTER -->
         <div id="footer">
-        <div class="container h-100 px-0">
-          <div class="row m-0 p-0 h-100 d-flex align-content-start">
-            <div class="col-12  d-flex  justify-content-between" id="logoContactB">
-                <div class="row h-100 m-0 p-0">
-                  <div class="col-12 col-md-4 pt-3 " id="footerContactLogo">
-                    <span style="font-weight: 700;">giard</span>design
+          <div class="container h-100 px-0">
+            <div class="row m-0 p-0 h-100 d-flex align-content-start">
+              <div class="col-12  d-flex  justify-content-between px-0" id="logoContactB">
+                  <div class="row h-100 m-0 p-0">
+                    <div class="col-12 col-md-4 pl-0 " id="footerContactLogo">
+                      <span style="font-weight: 700;">giard</span>design
+                    </div>
+                    <div class="col-12 col-md-8 d-flex flex-row justify-content-end px-0" id="footerContactButton">
+                      <b class="mr-3">Daj znać, co możemy dla Ciebie zrobić!</b>
+                      <button class="btn mt-4 mt-md-1" id="contactButton">Skontaktuj się z nami
+                    </div>
                   </div>
-                  <div class="col-12 col-md-8 d-flex flex-row justify-content-end" id="footerContactButton">
-                    <b class="mr-3  pt-3">Daj znać, co możemy dla Ciebie zrobić!</b>
-                    <button class="btn mt-4 mt-md-1" id="contactButton">Skontaktuj się z nami
+              </div>
+              <div class="col-12 px-0" id="socials">
+                <ul>
+                  <li>Kontakt</li>
+                  <li>Instagram</li>
+                  <li>Facebook</li>
+                  <li>LinkedIn</li>
+                  
+                </ul>
+                <span>
+                  <div class="row h-100 m-0 p-0 ">
+                    <div class="col-12 col-md-5 text-right">000-000-000</div>
+                    <div class="col-12 col-md-5 text-right">giarddesign@kontakt.pl</div>
                   </div>
+                </span>
+              </div>
+              <div class="col-12 px-0" id="footerBottom">
+                <div class="row m-0 p-0 h-100 d-flex justify-content-between px-3 px-lg-0 align-items-center text-left ">
+                  Prawa zastrzeżone &#169 2022
+                <span>
+                  made by <img src="./assets/logo-full-light.png" alt="footerLogo" class="mx-2">
+                </span>
                 </div>
-            </div>
-            <div class="col-12 px-0" id="socials">
-              <ul>
-                <li>Kontakt</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
-                
-              </ul>
-              <span>
-                <div class="row h-100 m-0 p-0 ">
-                  <div class="col-12 col-md-5 text-right">000-000-000</div>
-                  <div class="col-12 col-md-5 text-right">giarddesign@kontakt.pl</div>
-                </div>
-              </span>
-            </div>
-            <div class="col-12 px-0" id="footerBottom">
-              <div class="row m-0 p-0 h-100 d-flex justify-content-between px-3 px-lg-0 align-items-center text-left ">
-                Prawa zastrzeżone &#169 2022
-              <span>
-                madeBy <img src="./assets/logo-full-light.png" alt="footerLogo" class="mx-2">
-              </span>
               </div>
             </div>
           </div>
         </div>
-        </div>
 
 <!-- IMPORT SCRIPTS -->
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>        
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        
-        <script src="main.js" async defer></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>   
+      
+      <script src="main.js" async defer></script>
     </body>
 </html>

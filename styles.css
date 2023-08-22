@@ -1,5 +1,7 @@
 @import './keyframes.css';
-
+html {
+    scroll-behavior: smooth;
+  }
 *{
     margin:0;
     padding:0;
@@ -11,17 +13,12 @@
     padding:0;
 }
 /* RESPONSIVE TEXT */
-@media screen and (max-width: 576px) {
-    .grid-item {
-        width: calc(100% - 20px); 
-    }      
-}
 
 @media screen and (max-width: 976px) {
     .grid-item {
-      width: calc(100%/2 - 20px); 
-
+      width: calc(100%/2 - 20px) !important; 
     }
+
 }
  
 
@@ -35,10 +32,7 @@
         margin-top:0;
 
     }
-    #introText #introButtons button{
-        width: 50%;
-        
-    }
+
     /* KARTY OFERT */
     #oferta{
         height: 200vh !important;
@@ -55,15 +49,16 @@
 }
 
 @media (max-width: 576px) {
+    .grid-item {
+        width: calc(100%) !important; 
+    }    
     #introText >h2{
         font-size:70px !important;
     }
     #introText > p{
         font-size: 16px !important;
     }
-    #introButtons{
-        width: 90% ;
-    }
+
     #about{
         height: 100vh !important;
     }
@@ -84,12 +79,42 @@
         padding: 15px 20px !important;
     }
     #introButtons{
-        width: 70% ;
+        width: 70%;
     }
     
 }
 /* TABLET/MOBILE MEDIA */
-@media (max-width: 991px) {
+@media (max-width: 992px) {
+    .navbar ul{
+        width: 100% !important;
+    }
+    .nav-item a{
+        color:#111111 !important;
+        font-size:18px !important;
+        font-family: 'Inter', sans-serif;
+    }
+    .nav-item a:hover{
+        color:#1B5B31 !important
+    }
+    .dropdown-menu{
+        border:none;
+        animation: 0.5s showDropdown linear;
+    }
+    .dropdown-item{
+        padding: 10px 0 !important;
+        width: 100% !important;
+        left:0;
+        text-align: center;
+        border-bottom: 2px solid transparent;
+    }
+    .dropdown-item:hover{
+        border-bottom: 2px solid #1B5B31;
+        background-color: transparent;
+        transition: 0.3s ease;
+    }
+    .dropdown-divider{
+        display: none
+    }
     #intro{
         height: 93.5vh;
         position: relative;
@@ -142,28 +167,45 @@
 
     /* LEFT INTRO TEXT VALUES */
     #leftIntro{
-        background-image: url('./assets/introPhoto.png');
+       
         background-position: 100% 100%;
         background-repeat: no-repeat;
         background-size:130% 120%;
     }
+    .leftIntroF{
+        background-image: url('./assets/introPhoto.png');
+        
+    }
+    .leftIntroS{
+        background-image: url('./assets/gavin-mcgruddy-unsplash.jpg');
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size:130% 120%;
+        
+    }
     #leftIntro #introText{
         width: 90%;
+        color:#fff;
         /* text-shadow: 2px 2px 3px #ffffff8a; */
     }
-    #leftIntro #brightOverlay{
+     #secondBrightOverlay{
+        position: absolute;
+        top:0;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,1) 64%);
+    }
+    #brightOverlay{
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,1) 64%);
     }
     #leftIntro #introText > h2{
-        font-size:50px;
+        font-size:40px;
         color:#fff;
-        width: 80%;
+        width: 100%;
     }
-    #leftIntro #introText > p{
+    #introText p{
         font-size:14px;
         width: 100%;
-        margin-top:3%;
         font-weight: 200;
         color:#fffffffa;
     }
@@ -172,8 +214,7 @@
     #leftIntro #introText #introButtons{
         display: flex;
         flex-direction: column;
-        width: 60%;
-
+        width: 40%;
     }
 
     #leftIntro #introText #introButtons button:last-child{
@@ -183,12 +224,12 @@
         font-size:13px;
         font-weight: 800;
         border:2px solid #1B5B31;
-
     }
 
     .carousel-item.row{
         display: flex;
         flex-direction: row-reverse;
+        position: relative;
     }
 
     #rightIntro{
@@ -197,113 +238,143 @@
     #carouselControls{
         z-index: 60;
     }
-#introButtons button:first-child{
-    padding-left: 10px !important;
-}
-#introButtons button:last-child{
-    display: flex;
-    border-radius: 100px;
-    background-color: transparent;
-    border: 1px solid #1B5B31;
-    color:#1B5B31;
-    width: auto;
-    white-space: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-left:5%;
-}
-/* OFERTA */
-#oferta{
-    height: 140vh;
-    padding-bottom: 50px;
-}
-#contactButton{
-    padding: 5px 20px !important;
-    height: 20% !important;
-}
-.card{
-    height: 50% !important;
+    #introButtons button:first-child{
+        padding-left: 10px;
+    }
+    #introButtons button:last-child{
+        display: flex;
+        border-radius: 100px;
+        background-color: transparent;
+        border: 1px solid #1B5B31;
+        color:#1B5B31;
+        width: auto;
+        white-space: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-left:5%;
+    }
+    /* OFERTA */
+    #oferta{
+        height: 140vh;
+        padding-bottom: 50px;
+    }
+    #contactButton{
+        padding: 5px 20px !important;
+        height: 20% !important;
+    }
+    .card{
+        height: 50% !important;
 
-}
-.cardInside{
-    width: 100% !important;
-}
-.cardLink{
-    font-size: 9px !important;
+    }
+    .cardInside{
+        width: 100% !important;
+    }
+    .cardLink{
+        font-size: 9px !important;
 
-}
+    }
 
-#titleSmall p{
-    width: 90% !important  ;
-}
-#titleBig h2{
-    font-size:40px !important;
-}
-.card-text{
-    height: 40%;
-}
-.cardText b{
-    font-size: 18px !important;
-}
-.cardText p{
-    font-size: 9px !important;
-    font-weight: 500;
-}
-#about{
-    height: 70vh !important;
-}
-.cardInside img{
-    width: 22px;
-    height: 22px;
-}
-#aboutTextRectangle .row h2{
-    font-size:30px !important;
-}
-#aboutTextRectangle .row p{
-    width: 100%;
-    margin-top:5%;
-    font-size:13px !important;
-}
-#aboutTextRectangle .row button{
-    width: 100% !important;
-    font-size:10px !important;
-    white-space: nowrap; 
-}
-#socials{
-    width: 100%;
-}
-#socials span{
-    font-size:9px !important;
-}
-#socials ul {
-    margin-left:3%;
-}
-#socials ul li {
-    font-size: 10px !important;
-    
-}
-#instagramHeader h2{
-    font-size:30px !important;
-}
-#followB{
-    margin-left: -5%;
-}
-#footerBottom .row{
-    font-size:11px;
-    justify-content: space-between;
-}
-#footerContactButton b{
-    font-size:10px;
-}
-#footerContactButton button{
-    padding:15px 10px !important; 
-    margin-top:5% !important; 
-}
+    #titleSmall p{
+        width: 90% !important  ;
+    }
+    #titleBig h2{
+        font-size:40px !important;
+    }
+    .card-text{
+        height: 40%;
+    }
+    .cardText b{
+        font-size: 18px !important;
+    }
+    .cardText p{
+        font-size: 9px !important;
+        font-weight: 500;
+    }
+    #about{
+        height: 70vh !important;
+    }
+    .cardInside img{
+        width: 22px;
+        height: 22px;
+    }
+    #aboutTextRectangle .row h2{
+        font-size:30px !important;
+    }
+    #aboutTextRectangle .row p{
+        width: 100%;
+        margin-top:5%;
+        font-size:13px !important;
+    }
+    #aboutTextRectangle .row button{
+        width: 100% !important;
+        font-size:10px !important;
+        white-space: nowrap; 
+    }
+    #socials{
+        width: 100%;
+    }
+    #socials span{
+        font-size:9px !important;
+    }
+    #socials ul {
+        margin-left:3%;
+    }
+    #socials ul li {
+        font-size: 10px !important;
+        
+    }
+    #instagramText{
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+    }
+    #instagramHeader h2{
+        font-size:30px !important;
+    }
+    #followB{
+        margin-left: -5%;
+    }
+    #footerBottom .row{
+        font-size:11px;
+        justify-content: space-between;
+    }
+    #footerContactLogo{
+        padding-top:3% ;
+    }
+    #footerContactButton b{
+        font-size:10px;
+        margin-top:6.5%
+    }
+    #footerContactButton button{
+        padding:15px 10px !important; 
+        margin-top:5% !important; 
+    }
+
 
 }
 
 /* DESKTOP MEDIA */
-@media (min-width: 992px) {
+@media (min-width: 993px) {
+    
+    #logoNavbarSm{
+        display: none   
+    }
+    .dropdown-menu{
+        top:44px;
+        border:none;
+        border-radius: 0;
+        animation: showDropdown 0.3s ease-in;
+    }
+    .dropdown-menu a{
+
+        background-color: #fff;
+        margin-top:5px;
+    }
+    .dropdown-menu a:hover{
+        transition: 0.3s ease;
+        background-color: #FFEFBA;
+        border-radius: 55px;
+    }
     .collapse{
         display: flex;
         justify-content: flex-end;
@@ -311,9 +382,15 @@
 
     #footerContactLogo{
         font-size:20px;
+        padding-top: 1%;
     }
+
     #footerContactButton{
         font-weight: 300;
+        
+    }
+    #footerContactButton b {
+        margin-top:2%;
     }
     
 }
@@ -321,6 +398,7 @@
 .navbar{
     background-color: #ffff;
     z-index: 4000;
+    display: flex;
     
 }
 .navbar-nav{
@@ -433,21 +511,37 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      animation: showIntroText 0.8s linear;
+      animation: showIntroText 0.5s linear;
       z-index: 40;
 }
 #introText h2{
     margin-top:20%;
-    font-size:70px;
+    font-size:60px;
     width: 80%;
     line-height: 110%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
-#introText p{
+#secondIntroText{
+    width: 80%;  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    z-index: 40;
+}
+#secondIntroText h2{
+  margin-top:20%;
+  font-size:60px;
+  width: 80%;
+  line-height: 110%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+#secondIntroText p{
     font-family: 'Inter', sans-serif;
     width: 70%;
-    margin-top:40px;
+    margin-top:5% !important;
     font-size:16px;
     line-height: 150%;
 }
@@ -463,6 +557,7 @@
     height: 100%;
 }
 #introButtons{
+    min-width: 200px;
     width: 100%;
     height: auto;
     display: flex;
@@ -472,6 +567,14 @@
     margin-top:5%;
 
 }
+#introButtons a{
+    color:#1B5B31;
+}
+#introButtons a:hover{
+    color:#fff;
+    background-color: transparent;
+    text-decoration: none;
+}
 #introButtons button:first-child{
     border-radius: 100px;
     background-color: #1B5B31;
@@ -480,8 +583,7 @@
     font-weight: 300;
     white-space: nowrap;
     text-align: left;
-    padding:11px 10px;
-     
+    padding:11px 20px !important;
 }
 
 #introButtons button:first-child:hover{
@@ -498,15 +600,13 @@
     color:#1B5B31;
     width: auto;
     white-space: nowrap;
-
     margin-left:5%;
-    padding-left:52px;
-    padding-right:5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding:10px 20px !important;
 }
+
 #introButtons button:last-child:hover{
     color:#fff;
     border:1px solid #ffffffc2;
@@ -570,9 +670,10 @@
 .card{
     width: 100%;
     height: 80%;
-    padding:0 50px;
+    /* padding:0 20px; */
     background-color: transparent;
     border:none;
+    animation: showDropdown 0.5s ease;
 }
 .cardInside{
     width: 80%;
@@ -581,8 +682,54 @@
     border-radius: 28px;
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
+    align-content: space-around;
+    cursor: pointer;
+}
+.cardInside:hover:last-child{
+    color:#fff;
+}
+#cardFirst{
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(225deg, rgba(255,255,255,1) 29%, rgba(180,181,227,1) 43%, #FFEFBA 96%);
+    background-size:400% 400%;
+    background-position: 100% 400%;
+}
 
+#cardFirst:hover{
+    background-position: 100% 100%;
+    color:#fff;
+}
+/* SECOND CARD */
+#cardSecond{
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(225deg, rgba(255,255,255,1) 29%, rgba(227,204,180,1) 43%, rgba(255,199,77,1) 96%);
+    background-size:400% 400%;
+    background-position: 100% 400%;
+}
+
+#cardSecond:hover{
+    background-position: 100% 100%;
+    color:#fff;
+}
+.cardInside:hover .cardLink{
+    margin-left: 20px;
+    transition: 0.3s;
+}
+/* LAST CARD */
+#cardThird{
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(225deg, rgba(255,255,255,1) 29%, rgba(227,180,227,1) 43%, rgba(158,57,185,1) 96%);
+    background-size:400% 400%;
+    background-position: 100% 400%;
+
+}
+
+#cardThird:hover{
+    background-position: 100% 100%;
+    color:#fff;
 }
 .cardInside img{
     width: 44px;
@@ -594,17 +741,20 @@
 
 .cardLink{
     color:#1B5B31;
+    border-bottom:1px solid #1B5B31;
     font-size:16px;
     line-height: 160%;
     font-weight: 600;
-    border-bottom:1px solid #1B5B31;
     white-space: nowrap;
     /* margin-top:3%; */
 }
 .cardLink:hover{
+    color:#1b5b319c;
+    border-bottom:1px solid #1b5b319c;
     cursor: pointer;
     text-decoration: none;
 }
+
 /* ABOUT */
 #about{
     height:60vh;
@@ -662,38 +812,46 @@
     padding:12px 0px;
 
 }
+
 #aboutTextRectangle .row > button:hover{
-    border:1px solid #ffffff;
-    color:#fff;
+    border:1px solid #ffffff79;
+    color:#ffffff83;
     position: relative;
     top:2px;
+    transition: 0.3s;
+
 }
+
 /* MASONRY */
 #projekty{
     background-color: #DCC1AB;
     height: auto;
+    text-align: left;
 }
+
 #projekty p{
     font-size: 12px;
     color: #1B5B31;
     margin-left:20%;
 }
+
 #projekty h2{
     font-size:48px;
     margin-left:20%;
+    margin-bottom: 5%;
 }
+
 .grid{
     box-sizing: border-box;
     position: relative;
-    height:auto;
-
+    transition: 0.5s;
 }
-.grid-item {
 
+.grid-item {
     width: calc(100%/3 - 20px);
     margin-bottom:20px; 
-
 }      
+
 #gridOverlay{
     position: absolute;
     left:0;
@@ -709,6 +867,7 @@
     transition: 0.3s;
     pointer-events: none;
 }
+
 #overlayBtn{
     width: 124px;
     height: 54px;
@@ -721,21 +880,141 @@
     pointer-events: all;
     
 }
+
+/* hide overlay */
+#gridOverlayHide{
+    position: absolute;
+    display: none;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index: 200;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+#gridOverlayHide button{
+    width: 124px;
+    height: 54px;
+    border:1px solid #fff;
+    color:#fff;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    border-radius: 50px;
+    margin-bottom:5%;
+    pointer-events: all;
+    
+}
+
+#gridOverlayHide button:hover{
+    border:1px solid #1ba04a;
+    color:#1ba04a;
+}
+
 #overlayBtn:hover{
   border:2px solid #fff;
   color:#fff;
   position: relative;
   top:2px;
-
 }
+
 .grid-item img{
     width: 100%;
 }
+
 .grid-item img:hover{
     position: relative;
     top:2px;
     cursor: pointer;
     mix-blend-mode: multiply;
+}
+
+/* IMAGE GALLERY */
+#imageGallery{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(19, 19, 19, 0.726);
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+#imageGallery .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#prev{
+    position: absolute;
+    left:0;
+    width: 10%;
+    height: 100vh;
+    background-color: #00000031;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+#prev:hover{
+    cursor: pointer;
+    background-color: #0000008e;
+    color:#fff;
+}
+#next{
+    position: absolute;
+    right:0;
+    width: 10%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+#next:hover{
+    cursor: pointer;
+    background-color: #0000008e;
+    color:#fff;
+}
+
+#imageGallery .container{
+    position: relative;
+}
+#imageGallery .container img{
+    width: 100%;
+    height: 100%;
+ 
+}
+#galleryImg{
+    width: calc(60% - 100px );
+    height: 60%;
+    border:2px solid #ffffffb0;
+}
+
+#exit{
+    position: absolute;
+    left: 50px;
+    bottom:20px;
+    font-size:40px;
+    z-index: 200;
+    color:rgba(255, 0, 0, 0.822);
+ 
+}
+#exit > button{
+    width: 150px;
+    font-size:24px;
+}
+#exit:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 /* INSTAGRAM */
 #instagramBlock{
@@ -749,7 +1028,7 @@
 
 #instagramC{
     background-color: #1B5B31;
-    width: 80%;
+    width: 60%;
     height: 75%;
     color: #F5F0EC;
     
@@ -759,9 +1038,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
 }
+
 #instagramHeader h2{
     font-size:40px;
     font-weight: 300;
@@ -773,7 +1051,7 @@
 #instagramText{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #instagramText > p {
@@ -788,6 +1066,7 @@
     background-color: #F5F0EC;
     color: #1B5B31;
     border-radius: 100px;
+  
 }
 #followB:hover{
     background-color: transparent;
